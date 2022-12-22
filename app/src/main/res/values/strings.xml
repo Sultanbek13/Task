@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Task</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="region">Region</string>
+    <string name="verification">Verification</string>
+    <string name="btn_code">Code</string>
+    <string name="fill_the_field">Fill the field</string>
+    <string name="login_code">Login code 133337</string>
+    <string name="next">Next</string>
+    <string name="profile">Profile</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="birthday">Birthday</string>
+    <string name="city">City</string>
+    <string name="vk">VK</string>
+    <string name="instagram">Instagram</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="register">Register</string>
+    <string name="more_letters">Please enter more letters</string>
+    <string name="skip">Skip</string>
+    <string name="chats">Chats</string>
+</resources>

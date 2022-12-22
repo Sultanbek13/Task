@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="standard_height">64dp</dimen>
+    <dimen name="margin_standard_large">24dp</dimen>
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="margin_middle_standard">12dp</dimen>
+    <dimen name="margin_middle">8dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_extra_small">2dp</dimen>
+    <dimen name="text_size_standard">18dp</dimen>
+
+    <dimen name="numberTextSize">30sp</dimen>
+
+    <dimen name="valueTextSize">24sp</dimen>
+    <dimen name="margin_big">64dp</dimen>
+    <dimen name="size_default">10dp</dimen>
+    <dimen name="size_1dp">1dp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginHorizontal="@dimen/margin_middle"
+    android:layout_marginVertical="@dimen/margin_middle"
+    app:cardCornerRadius="@dimen/margin_middle"
+    app:cardElevation="@dimen/margin_small">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#21242E">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivUser"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginVertical="@dimen/margin_middle"
+            android:layout_marginStart="@dimen/margin_standard"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user_img"
+            app:shapeAppearanceOverlay="@style/ShapeImageDetail" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/music_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/margin_standard"
+            android:layout_toEndOf="@id/ivUser"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxWidth="200dp"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Sultanoo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxWidth="130dp"
+                android:singleLine="true"
+                android:textColor="@color/green"
+                tools:text="Online" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

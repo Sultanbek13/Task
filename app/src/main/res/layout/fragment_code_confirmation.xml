@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tvVerification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/verification"
+        android:textSize="@dimen/text_size_standard"
+        android:textColor="@color/white"
+        android:fontFamily="@font/text_font_style_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="@dimen/margin_standard_large"
+        />
+
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvVerification"
+        app:layout_constraintStart_toStartOf="@id/tvVerification"
+        app:layout_constraintEnd_toEndOf="@id/tvVerification"
+        android:textColor="@color/text_color_transparent"
+        tools:text="+123456789"
+        android:layout_marginVertical="@dimen/margin_small"
+        android:textSize="@dimen/text_size_small"
+        tools:ignore="SmallSp"
+        />
+
+    <com.fraggjkee.smsconfirmationview.SmsConfirmationView
+        android:id="@+id/smsCodeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPhoneNumber"
+        android:layout_marginVertical="@dimen/margin_standard_large"
+        app:scv_codeLength="6"
+        />
+
+    <TextView
+        android:id="@+id/loginCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/smsCodeView"
+        android:text="@string/login_code"
+        android:layout_marginVertical="@dimen/margin_standard"
+        android:textColor="@color/text_color_transparent"
+        android:textSize="@dimen/text_size_small"
+        android:clickable="true"
+        android:focusable="true"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNext"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/margin_standard"
+        android:backgroundTint="@color/black"
+        android:keepScreenOn="true"
+        android:paddingHorizontal="48dp"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textSize="@dimen/text_size_standard"
+        android:layout_marginHorizontal="@dimen/margin_standard"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="SpUsage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

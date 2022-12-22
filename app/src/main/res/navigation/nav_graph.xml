@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authFragment">
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.sultandev.task.presentation.fragmetns.auth.AuthFragment"
+        android:label="AuthFragment"
+        tools:layout="@layout/fragment_auth"
+        >
+        <action
+            android:id="@+id/action_authFragment_to_confirmFragment"
+            app:destination="@id/confirmFragment" />
+        <action
+            android:id="@+id/action_authFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmFragment"
+        android:name="com.sultandev.task.presentation.fragmetns.confirm.ConfirmFragment"
+        android:label="ConfirmFragment"
+        tools:layout="@layout/fragment_code_confirmation"
+        >
+        <argument
+            android:name="phone_number"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_confirmFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph"
+            />
+        <action
+            android:id="@+id/action_confirmFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.sultandev.task.presentation.fragmetns.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register"
+        >
+
+        <action
+            android:id="@+id/action_registerFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+
+        <argument
+            android:name="phone_number"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.sultandev.task.presentation.fragmetns.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.sultandev.task.presentation.fragmetns.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main"
+        >
+        <action
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_chatDetailFragment"
+            app:destination="@id/chatDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatDetailFragment"
+        android:name="com.sultandev.task.presentation.fragmetns.main.detail.ChatDetailFragment"
+        android:label="ChatDetailFragment"
+        tools:layout="@layout/fragment_chat_detail"
+        >
+        <argument android:name="chat_current_user"
+            app:argType="com.sultandev.task.data.remote.models.userinfo.ItemChat" />
+    </fragment>
+
+</navigation>
