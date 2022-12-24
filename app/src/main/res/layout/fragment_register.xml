@@ -7,13 +7,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewRegister"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1:1"
         app:cardElevation="@dimen/margin_small"
         app:cardCornerRadius="@dimen/margin_standard"
         >
@@ -24,7 +21,6 @@
             android:orientation="vertical"
             android:padding="@dimen/margin_standard"
             android:background="@color/card_view_color"
-            android:gravity="center"
             >
 
             <com.google.android.material.textfield.TextInputLayout
@@ -36,7 +32,7 @@
                 <TextView
                     android:id="@+id/etPhoneNumberRegister"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="40dp"
                     tools:text="+9923233232"
                     android:gravity="center"
                     android:textColor="@color/text_color_transparent"
@@ -48,7 +44,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/margin_standard"
+                android:layout_marginVertical="@dimen/margin_middle_standard"
                 style="@style/TextInputLayoutStyle"
                 >
 
@@ -66,7 +62,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/margin_standard"
+                android:layout_marginVertical="@dimen/margin_middle_standard"
                 style="@style/TextInputLayoutStyle"
                 >
 

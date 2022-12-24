@@ -19,6 +19,21 @@
         android:fontFamily="@font/text_font_style_bold"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatarProfile"
+        app:layout_constraintBottom_toTopOf="@id/avatarProfile"
+        android:text="@string/avatar"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small"
+        android:fontFamily="@font/text_font_style_bold"
+        android:clickable="true"
+        android:focusable="true" />
+
+
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/avatarProfile"
         android:layout_width="0dp"
@@ -142,6 +157,7 @@
                 >
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCancel"
                     android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/margin_standard_large"
@@ -153,6 +169,7 @@
                     />
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSave"
                     android:layout_width="140dp"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/margin_standard_large"

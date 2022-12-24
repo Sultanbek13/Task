@@ -1,5 +1,6 @@
 package com.sultandev.task.data.local.pref
 
+import android.net.Uri
 import com.sultandev.task.data.remote.models.userinfo.ProfileData
 
 interface SharedPref {
@@ -23,5 +24,13 @@ interface SharedPref {
     fun saveUserInfo(profileData: ProfileData)
 
     fun getUserInfo(): ProfileData
+
+    fun saveUriAvatarProfile(uri: String)
+
+    fun getUriAvatarProfile(): String
+
+    fun setUpdateProfile(state: Boolean)
+
+    fun getUpdateProfile(): Boolean
 
 }

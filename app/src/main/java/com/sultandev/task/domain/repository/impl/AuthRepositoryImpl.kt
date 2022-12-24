@@ -7,7 +7,7 @@ import com.sultandev.task.domain.repository.AuthRepository
 import retrofit2.Response
 import javax.inject.Inject
 
-class AuthRepositoryImpl @Inject constructor(private val api: AuthApi,  private val sharedPref: SharedPref): AuthRepository {
+class AuthRepositoryImpl @Inject constructor(private val sharedPref: SharedPref, private val api: AuthApi): AuthRepository {
 
     override suspend fun sendAuthCode(userPhoneRequestData: UserPhoneRequestData): Response<Unit> = api.sendAuthCode(userPhoneRequestData)
 

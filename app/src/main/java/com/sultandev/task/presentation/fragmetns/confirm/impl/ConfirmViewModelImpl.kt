@@ -4,10 +4,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sultandev.task.data.remote.models.UserCheckRequestData
 import com.sultandev.task.domain.repository.impl.AuthRepositoryImpl
+import com.sultandev.task.domain.repository.impl.UserInfoRepositoryImpl
 import com.sultandev.task.presentation.fragmetns.confirm.ConfirmViewModel
 import com.sultandev.task.utils.hasConnection
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,7 +19,7 @@ import java.io.IOException
 import javax.inject.Inject
 
 @HiltViewModel
-class ConfirmViewModelImpl @Inject constructor(private val authRepository: AuthRepositoryImpl) :
+class ConfirmViewModelImpl @Inject constructor(private val authRepository: AuthRepositoryImpl, private val userInfo: UserInfoRepositoryImpl) :
     ConfirmViewModel, ViewModel() {
 
     override val checkCodeFlow: MutableStateFlow<Unit> = MutableStateFlow(Unit)
@@ -37,6 +39,7 @@ class ConfirmViewModelImpl @Inject constructor(private val authRepository: AuthR
                         }
                         if (response.isSuccessful) {
                             if(response.body()?.isUserExists == false) {
+                                userInfo.setUpdateUserInfo(true)
                                 isUserExits.emit(false)
                             } else {
                                 authRepository.setUserRegistered(true)
@@ -44,6 +47,7 @@ class ConfirmViewModelImpl @Inject constructor(private val authRepository: AuthR
                                 authRepository.saveRefreshToken(response.body()!!.refreshToken)
                                 authRepository.saveAccessToken(response.body()!!.accessToken)
                                 checkCodeFlow.emit(Unit)
+                                userInfo.setUpdateUserInfo(true)
                                 isUserExits.emit(true)
                             }
                         } else {
